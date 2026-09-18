@@ -1,0 +1,124 @@
+# ============================================================
+# PYTHON
+# ============================================================
+# Python creates compiled bytecode/cache files while executing.
+# These are generated artifacts, not source code.
+# They should never be committed.
+# ============================================================
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+
+# ============================================================
+# VIRTUAL ENVIRONMENTS
+# ============================================================
+# The virtual environment can contain thousands of files.
+#
+# We NEVER commit the entire virtual environment.
+#
+# Instead, we commit dependency declarations such as:
+#
+#     pyproject.toml
+#     uv.lock
+#
+# Those files allow another developer or CI/CD system to
+# reproduce the environment.
+# ============================================================
+
+.venv/
+venv/
+env/
+
+
+# ============================================================
+# ENVIRONMENT VARIABLES / SECRETS
+# ============================================================
+# .env may contain:
+#
+#     OPENAI_API_KEY
+#     LANGSMITH_API_KEY
+#     DATABASE_PASSWORD
+#     QDRANT_API_KEY
+#
+# These must NEVER enter Git history.
+#
+# Once a secret has been committed, deleting the file later
+# does NOT magically remove the secret from Git history.
+# ============================================================
+
+.env
+.env.local
+.env.*.local
+
+
+# ============================================================
+# IDE / EDITOR FILES
+# ============================================================
+
+.vscode/
+.idea/
+
+
+# ============================================================
+# JUPYTER
+# ============================================================
+
+.ipynb_checkpoints/
+
+
+# ============================================================
+# PYTEST / COVERAGE
+# ============================================================
+
+.pytest_cache/
+.coverage
+htmlcov/
+
+
+# ============================================================
+# TYPE CHECKING / LINTING
+# ============================================================
+
+.mypy_cache/
+.ruff_cache/
+
+
+# ============================================================
+# BUILD ARTIFACTS
+# ============================================================
+
+build/
+dist/
+*.egg-info/
+
+
+# ============================================================
+# OPERATING SYSTEM
+# ============================================================
+
+.DS_Store
+Thumbs.db
+
+
+# ============================================================
+# LOG FILES
+# ============================================================
+
+*.log
+logs/
+
+
+# ============================================================
+# LOCAL DATA / VECTOR STORES
+# ============================================================
+# We don't want huge generated databases accidentally entering
+# source control.
+#
+# Later we will discuss which evaluation datasets SHOULD be
+# version controlled.
+# ============================================================
+
+chroma_db/
+qdrant_storage/
